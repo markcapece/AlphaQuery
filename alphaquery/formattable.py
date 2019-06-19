@@ -64,6 +64,15 @@ class FormatTable(object):
         table = table.astype('float32')
         return table
 
+    @staticmethod
+    def period_columns(table, period):
+        """Adds period value to column headers
+        Sets datatype to float
+        """
+        table.columns = [col+str(period) for col in table.columns]
+        table = table.astype('float32')
+        return table
+
     def __str__(self):
         return self.__class__.__name__
 

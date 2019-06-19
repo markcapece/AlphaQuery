@@ -140,6 +140,7 @@ class AlphaQuery(object):
 
         table = FormatTable.unpack_series(table)
         table = FormatTable.clear_nan(table)
+        table = FormatTable.period_columns(table, period)
 
         return table
 
